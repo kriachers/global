@@ -24,6 +24,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.woff);
+    font-display: swap;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* RESET */
 
 html {
@@ -34,6 +42,11 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -48,7 +61,7 @@ button {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-        color: #FFFFFF;
+    color: #FFFFFF;
 }
 
 img {
@@ -263,13 +276,15 @@ margin-bottom: 50px;
 
 .main-wrapper-search__button {
     position: absolute;
-    right: 6px;
     top: 50%;
-    padding: 14.67px;
-    border-radius: 50%;
-    transform: translateY(-50%);
+    right: 6px;
+
     width: 55px;
     height: 55px;
+    padding: 14.67px;
+
+    border-radius: 50%;
+    transform: translateY(-50%);
     pointer-events: all;
 }
 
@@ -304,6 +319,7 @@ cursor: default;
 .main-wrapper-users__img {
     width: 38px;
     border-radius: 50%;
+    border: solid #FFFFFF 3px;
     box-shadow: 0px 0px 0px 3px white inset;
 }
 
@@ -351,18 +367,18 @@ cursor: default;
 }
 
 .main__graphics {
-    height: 450px;
     position: relative;
     z-index: 2;
+
+    height: 450px;
 }
 
 .person {
     position: absolute;
+    top: 0;
+    left: -37px;
     z-index: 3;
     max-width: 534px;
-    left: -37px;
-    top: 0;
-    /* visibility: hidden; */
 }
 
 .main-graphic-animation__circle {
@@ -373,8 +389,8 @@ cursor: default;
 /* animation */
 
 .main-graphics-counties__first {
-    z-index: 2;
     position: absolute;
+    z-index: 2;
     animation-duration: 3s;
     animation-name: first-up;
     animation-delay: 3s;
@@ -404,8 +420,8 @@ cursor: default;
 
 
 .main-graphics-counties__second {
-    z-index: 1;
     position: absolute;
+    z-index: 1;
     animation-duration: 3s;
     animation-name: second-up;
     animation-delay: 6s;
@@ -432,8 +448,8 @@ cursor: default;
 
 
 .main-graphics-counties__third {
-    z-index: 1;
     position: absolute;
+    z-index: 1;
     animation-duration: 3s;
     animation-name: third-up;
     animation-delay: 9s;
@@ -460,8 +476,8 @@ cursor: default;
 }
 
 .main-graphics-counties__four {
-    z-index: 1;
     position: absolute;
+    z-index: 1;
     animation-duration: 3s;
     animation-name: four-up;
     animation-delay: 12s;
@@ -486,8 +502,8 @@ cursor: default;
 }
 
 .main-graphics-counties__five {
-    z-index: 1;
     position: absolute;
+    z-index: 1;
     animation-duration: 3s;
     animation-name: five-up;
     animation-delay: 15s;
@@ -542,10 +558,10 @@ height: 360px;
 
 .person {
     position: absolute;
+    top: 0;
+    left: -32px;
     z-index: 3;
     max-width: 430px;
-    left: -32px;
-    top: 0;
 }
 
 .main-graphics-counties__first {
@@ -583,9 +599,9 @@ height: 360px;
     width: 25px;
     height: 3px;
     margin: 5px auto;
+    background-color: var(--green-color);
     -webkit-transition: all 0.3 ease-in-out;
     transition: all 0.3 ease-in-out;
-    background-color: var(--green-color);
 }
 
 .hamburger.active .bar:nth-child(2) {
@@ -607,39 +623,43 @@ transition: all 0.3 ease-in-out;
 
 
 .hamburger__menu {
+    position: fixed;
+    top: 100px;
+    right: 0;
+
     width: 10%;
+    height: 100vh;
+    z-index: 100;
+
     visibility: hidden;
     opacity: 0;
-        
-    z-index: 100;
     background-color: #ECF7F3;
-    position: fixed;
     transition: all 0.3s ease;
     pointer-events: none;
-    right: 0;
-    top: 100px;
     /* top: 12%; */
-    height: 100vh;
 }
 
 .hamburger__menu.active {
+    position: fixed;
+    top: 100px;
+    right: 0;
+    z-index: 100;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: #ECF7F3;
     visibility: visible;
     opacity: 1;
-    z-index: 100;
-    background-color: #ECF7F3;
-    position: fixed;
-    width: 100%;
+
     transition: all 0.3s ease;
     pointer-events: auto;
-    right: 0;
-    top: 100px;
-    height: 100vh;
 }
 
 
 .hamburger__title {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 15px;
     padding-bottom: 30px;
     border-bottom: 1px solid #ccc;
 }
@@ -655,8 +675,8 @@ transition: all 0.3 ease-in-out;
 
 .hamburger__item {
     padding: 25px 0;
-    border-bottom: 1px solid #ccc;
     padding-left: 30px;
+    border-bottom: 1px solid #ccc;
 }
 
 .hamburger__link {
@@ -664,18 +684,17 @@ transition: all 0.3 ease-in-out;
 }
 
 .hamburger__text {
-    text-align: center;
     margin: 20px 30px;
     padding: 30px;
+    text-align: center;
 }
 
 .hamburger__button {
-    text-align: center;
     margin: 20px 30px;
+    text-align: center;
 }
 
 @media (max-width: 982px) {
-
 
 .hamburger {
     display: block;
@@ -685,11 +704,7 @@ transition: all 0.3 ease-in-out;
 .header__menu, .header__button {
     display: none;
 }
-
 }
-
-
-
 
 @media (max-width: 860px) {
 
@@ -702,9 +717,7 @@ transition: all 0.3 ease-in-out;
     .main-container {
         margin-left: 85px;
         margin-right: 70px;
-
     }
-
 
     .main {
         display: flex;
@@ -713,10 +726,10 @@ transition: all 0.3 ease-in-out;
         align-items: center;
     }
 
-        .main__wrapper {
-            width: 100%;
-            margin-right: 0;
-        }
+    .main__wrapper {
+        width: 100%;
+        margin-right: 0;
+    }
 
     .main__graphics {
         margin-top: 50px;
@@ -734,65 +747,75 @@ transition: all 0.3 ease-in-out;
         line-height: 45.5px;
     }
 
-.main__wrapper {
-    align-items: center;
-    justify-content: center;
-}
-        .header-container {
-                margin-left: 30px;
-                margin-right: 30px;
-                margin-bottom: 30px;
-            }
+    .main__wrapper {
+        align-items: center;
+        justify-content: center;
+    }
         
-            .main-container {
-                margin-left: 30px;
-                margin-right: 30px;
+    .header-container {
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+    }
         
-            }
+    .main-container {
+        margin-left: 30px;
+        margin-right: 30px;
+        
+    }
 }
 
 @media (max-width: 450px) {
 
-.main__wrapper {
-        margin-top: 10px;
+    .main__wrapper {
+            margin-top: 10px;
+    }
+
+    .main__graphics {
+    height: 252px;
+    }
+
+    .main-graphic-animation__circle {
+        max-width: 252px;
+    }
+
+    .person {
+        position: absolute;
+        top: 0;
+        left: -22.4px;
+        z-index: 3;
+        max-width: 301px;
+    }
+
+    .main-graphics-counties__first {
+        width: 28px;
+    }
+
+    .main-graphics-counties__second {
+        width: 44.8px;
+    }
+
+    .main-graphics-counties__third {
+        width: 33.6px;
+    }
+
+    .main-graphics-counties__four {
+        width: 39.2px;
+    }
+
+    .main-graphics-counties__five {
+        width: 28px;
+    }
 }
 
-.main__graphics {
-height: 252px;
+@media (max-width: 360px) {
+    .main-wrapper-search__input {
+        padding: 21px 20px;
+    }
 }
 
-
-
-.main-graphic-animation__circle {
-    max-width: 252px;
-}
-
-.person {
-    position: absolute;
-    z-index: 3;
-    max-width: 301px;
-    left: -22.4px;
-    top: 0;
-}
-
-.main-graphics-counties__first {
-    width: 28px;
-}
-
-.main-graphics-counties__second {
-    width: 44.8px;
-}
-
-.main-graphics-counties__third {
-    width: 33.6px;
-}
-
-.main-graphics-counties__four {
-    width: 39.2px;
-}
-
-.main-graphics-counties__five {
-    width: 28px;
-}
-
+@media (max-width: 330px) {
+    .main-wrapper-search__input {
+        font-size: 14px;
+    }
 }
